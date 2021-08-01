@@ -1,0 +1,25 @@
+﻿@model SM.Models.User
+
+<form asp-controller="Home" asp-action="Login">
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-primary pl-3">Login</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group col-sm-6">
+                    <label for="Username">Username</label>
+                    <input type="text" class="form-control" id="Username" asp-for="UserName" placeholder="Enter username">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control" id="Password" asp-for="Password" placeholder="Enter password">
+                </div>
+                <div class="form-group col-sm-6">
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </div>
+        </div>
+    </div>
+</form>

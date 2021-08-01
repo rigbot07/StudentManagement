@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Student statistics";
+}
+@model IEnumerable<SM.Models.Statistic>
+
+<div class="border p-3">
+    <div class="container p-3">
+        <div class="row pt-4">
+            <div class="col-6">
+                <h2 class="text-primary">Student statistics</h2>
+            </div>
+        </div>
+
+        <br /><br />
+
+        @if (Model.Count() > 0)
+        {
+            <table class="table table-bordered table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>
+                            Student name
+                        </th>
+                        <th>
+                            Average
+                        </th>
+                        <th>
+                            Unsatisfactory grades
+                        </th>
+                        <th>
+                            Best grade
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var statistic in Model)
+                    {
+                        <tr>
+                            <td width="40%">@statistic.Name</td>
+                            <td width="10%">@statistic.Average</td>
+                            <td width="30%">@statistic.NumberOfUnsatisfactoryGrades</td>
+                            <td width="20%">@statistic.BestGrade</td>
+                        </tr>
+                    }
+                </tbody>
+            </table> }
+        else
+        {
+            <h2 class="text-danger">No statistic found</h2>}
+
+    </div>
+</div>
